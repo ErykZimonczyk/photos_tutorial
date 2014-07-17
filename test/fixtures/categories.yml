@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+category_1:
+  id: 1
+  name: All
+
+category_2:
+  id: 2
+  name: Pets
+category_3:
+  id: 3
+  name: Buildings
+category_4:
+  id: 4
+  name: Funny
+category_5:
+  id: 5
+  name: Family
+category_6:
+  id: 6
+  name: Friends
+category_7:
+  id: 7
+  name: People
+
