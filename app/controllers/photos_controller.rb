@@ -15,10 +15,12 @@ class PhotosController < ApplicationController
   # GET /photos/new
   def new
     @photo = Photo.new
+    @all_categories = Category.all.order("name")
   end
 
   # GET /photos/1/edit
   def edit
+    @all_categories = Category.all.order("name")
   end
 
   # POST /photos

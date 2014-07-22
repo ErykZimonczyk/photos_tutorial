@@ -2,24 +2,30 @@
 
 category_1:
   id: 1
+  parent_id: NULL
   name: All
-
 category_2:
   id: 2
-  name: Pets
+  parent_id: 1
+  name: People
 category_3:
   id: 3
+  parent_id: 1
   name: Buildings
 category_4:
   id: 4
+  parent_id: 1
   name: Funny
 category_5:
   id: 5
+  parent_id: 2
   name: Family
 category_6:
   id: 6
+  parent_id: 2
   name: Friends
 category_7:
   id: 7
-  name: People
+  parent_id: 1
+  name: Pets
 

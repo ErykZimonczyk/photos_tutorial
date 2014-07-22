@@ -3,5 +3,5 @@ slide_<%= i %>:
   id: <%= i %>
   position: <%= i %>
   photo_id: <%= i %>
-  slideshow_id: <%= i %>
+  slideshow_id: 1
 <% end %>

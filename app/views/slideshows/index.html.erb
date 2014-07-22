@@ -1,25 +1,28 @@
-<h1>Listing slideshows</h1>
+<div><%= link_to 'New slideshow', action:'new'%></div>
+<div id="slideshow-summaries">
+  <% @slideshows.each do |slideshow| %>
+    <div id="slideshow-summary">
+      <div id="slideshow-caption">
+        <%= slideshow.name %>
+        <small>(<%= slideshow.slides.size %> slides)</small>
+      </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <div id="slideshow-thumbnails">
+        <% 5.times do |i| -%>
+            <%= thumbnail_tag slideshow.slides[i] %>
+        <% end -%>
+        &nbsp;
+        <strong>. . .</strong>
+      </div>
 
-  <tbody>
-    <% @slideshows.each do |slideshow| %>
-      <tr>
-        <td><%= slideshow.name %></td>
-        <td><%= link_to 'Show', slideshow %></td>
-        <td><%= link_to 'Edit', edit_slideshow_path(slideshow) %></td>
-        <td><%= link_to 'Destroy', slideshow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div id="slideshow-controls">
+        <%= link_to "Show", slideshow %>
+        <%= link_to "Edit", edit_slideshow_path(slideshow) %>
+        <%= link_to "Delete", slideshow, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+    <br/>
     <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Slideshow', new_slideshow_path %>
+</div>
+<br />

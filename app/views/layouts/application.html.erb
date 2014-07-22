@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Photos</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Photos: <%= controller.action_name%></title>
+  <%= stylesheet_link_tag 'applications' %>
+  <%= stylesheet_link_tag 'photos' %>
+  <%= stylesheet_link_tag 'slideshows' %>
+  <%= javascript_include_tag 'application.js' %>
+
 </head>
+
 <body>
 
-<%= yield %>
+    <div style="background-color: LightBlue">
+      <p class="navbar">
+        &nbsp;
+        <%= link_to 'Fotografie',photos_path %>
+        &nbsp;
+        <%= link_to 'Kategorie',categories_path %>
+        &nbsp;
+        <%= link_to 'Slajdy: pokazy',slideshows_path %>
+      </p>
+    </div>
+
+    <p style="color:forestgreen">
+      <%= flash[:notice] %>
+    </p>
+
+    <%= yield %>
 
 </body>
 </html>

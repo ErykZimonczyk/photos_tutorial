@@ -1,0 +1,5 @@
+<% 1.upto(9) do |i| %>
+categories_photos_<%= i%>:
+  category_id: 1
+  photo_id: <%= i%>
+<%end%>

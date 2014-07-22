@@ -1,23 +1,13 @@
-<h1>Listing photos</h1>
+<h1>Photos list</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Filename</th>
-      <th>Thumbnail</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
   <tbody>
     <% @photos.each do |photo| %>
       <tr>
-        <td><%= photo.filename %></td>
-        <td><%= photo.thumbnail %></td>
-        <td><%= photo.description %></td>
-        <td><%= link_to 'Show', photo %></td>
-        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
+        <td><%= link_to(image_tag("photos/#{photo.thumbnail}",size:'75x56',border:1,id:'thumbnail'),photo) %></td>
+        <td><%=h photo.filename %></td>
+
         <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
